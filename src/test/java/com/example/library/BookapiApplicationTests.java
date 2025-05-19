@@ -1,4 +1,4 @@
-package com.example.bookapi;
+package com.example.library;
 
 // Simplified test class without Spring Boot dependencies
 public class BookapiApplicationTests {

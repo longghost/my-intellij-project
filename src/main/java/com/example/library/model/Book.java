@@ -1,4 +1,4 @@
-package com.example.bookapi.model;
+package com.example.library.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
@@ -17,15 +17,19 @@ public class Book {
     private String author;
     private String genre;
     private int year;
+    private String isbn;
+    private int copiesAvailable;
 
     public Book() {}
 
-    public Book(Long id, String title, String author, String genre, int year) {
+    public Book(Long id, String title, String author, String genre, int year, String isbn, int copiesAvailable) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.year = year;
+        this.isbn = isbn;
+        this.copiesAvailable = copiesAvailable;
 }
  // Getters and Setters
     public Long getId() { return id; }
@@ -41,5 +45,15 @@ public class Book {
     public void setGenre(String genre) { this.genre = genre; }
 
     public int getYear() { return year; }
-    public void setYear(int year) { this.year =year;}
+    public void setYear(int year) { this.year = year; }
+
+    public String getIsbn() { return isbn; }
+    public void setIsbn(String isbn) { this.isbn = isbn; }
+
+    public int getCopiesAvailable() { return copiesAvailable; }
+    public void setCopiesAvailable(int copiesAvailable) { this.copiesAvailable = copiesAvailable; }
+
+    // Alias method for compatibility with BookService
+    public int getPublishedYear() { return year; }
+    public void setPublishedYear(int publishedYear) { this.year = publishedYear; }
 }
